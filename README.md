@@ -19,6 +19,6 @@ C++ - data structure implementation and analysis <br />
 Git - version control 
 
 # Distribution of Roles
-Carter Johnson - data generation & data structure implementation
-Mira Menon - sorting algorithms & data structure implementation
+Carter Johnson - data generation & data structure implementation <br />
+Mira Menon - sorting algorithms & data structure implementation <br />
 Vincent Fleming - github version control & data strucutre implementation

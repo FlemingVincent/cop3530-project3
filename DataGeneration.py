@@ -1,8 +1,9 @@
+from ast import Add
 import pandas as pd
 import random
 
 from faker import Faker
-faker = Faker()
+faker = Faker('en_US')
 
 COUNT = 100000
 
@@ -12,8 +13,12 @@ def generate_names(count, type):
     for i in range(count):
         if(type == 'ssn'):
             c_item = faker.ssn()
-        elif(type == 'name'):
-            c_item = faker.name()
+        elif(type == 'first_name'):
+            c_item = faker.first_name()
+        elif(type == 'last_name'):
+            c_item = faker.last_name()
+        elif (type == 'address'):
+            c_item = faker.address()
 
         print(f'[{i}] : {c_item}')
         item_list.append(c_item)
@@ -25,12 +30,19 @@ def generate_data():
     global faker
 
     ssn_list = generate_names(COUNT, 'ssn')
-    user_name_list = generate_names(COUNT, 'name')
+    first_name_list = generate_names(COUNT, 'first_name')
+    last_name_list = generate_names(COUNT, 'last_name')
+    address_list = generate_names(COUNT, 'address')
 
-    data    = pd.DataFrame({
+    data = pd.DataFrame({
         'ssn' : ssn_list,
-        'user_name' : user_name_list,
+        'first_name' : first_name_list,
+        'last_name' : last_name_list,
+        'address' : address_list,
     })
+    
+    data['email'] = data['first_name'] + '.' + data['last_name'] + '@miraIncorporated.com'
+    data['address'] = data['address'].str.replace('\n', ' ')
 
     return data
 
