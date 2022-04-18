@@ -2,8 +2,7 @@
 Developed by Carter Johnson, Mira Menon, and Vincent Fleming
 
 # Problem
-We would like to analyze and reduce search times in a randomly generated
-database storing user information.
+We would like to analyze and reduce search times in a randomly generated database storing user information.
 
 # Motivation
 For large companies that support hundreds of thousands of users, it is important to provide access to user information in the most effective way possible.
@@ -15,8 +14,8 @@ By comparing two different search algorithms, we will compare the speeds of the 
 Link to dataset here:
 
 # Tech Stack
-Python - data generation
-C++ - data structure implementation and analysis
+Python - data generation <br />
+C++ - data structure implementation and analysis <br />
 Git - version control 
 
 # Distribution of Roles
