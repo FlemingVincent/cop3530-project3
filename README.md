@@ -14,7 +14,7 @@ By comparing two different search algorithms, we will compare the speeds of the 
 userData(ssn, first_name, last_name, address, email)
 
 # Tech Stack
-Python - data generation <br />
+Python, Pandas, Faker - data generation <br />
 C++ - data structure implementation and analysis <br />
 Git - version control 
 
