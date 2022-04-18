@@ -11,7 +11,7 @@ For large companies that support hundreds of thousands of users, it is important
 By comparing two different search algorithms, we will compare the speeds of the two search algorithms, ultimately determining which algorithm is more effective.
 
 # Data
-Link to dataset here:
+Link to dataset here: social security number; Name
 
 # Tech Stack
 Python - data generation <br />
