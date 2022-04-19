@@ -54,6 +54,7 @@ def generate_data():
     data = data.astype({'rand': str})
     data['username'] = data['first_name'] + '.' + data['last_name'] + data['rand']
     data['address'] = data['address'].str.replace('\n', ' ')
+    data['address'] = data['address'].str.replace(',', '')
     data['email'] = data['username'] + '@miraIncorporated.com'
     data = data.drop('rand', axis=1)
 
@@ -103,7 +104,7 @@ def startpy():
 
     data.to_csv('./EmployeeData.csv')
 
-    admin = data.loc[0:10, ['username', 'password']]
+    admin = data.loc[0:9, ['username', 'password']]
     print(admin.head())
 
     admin.to_csv('./AdminData.csv')
