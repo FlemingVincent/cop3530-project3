@@ -12,7 +12,7 @@
 
 # Data
   Our dataset was randomly generated using two python libraries: Faker and Pandas. Faker allowed us to call functions such as first_name(), last_name(), and ssn() to randomly generate values. In combination with Faker, Pandas was also used. Pandas allowed us to take the randomly generated data, store it in a dataframe, and then load that data into a .csv file. Our dataset follows the following schema: <br />
-EmployeeData(snn, first_name, last_name, address, email, username, passwordl)
+EmployeeData(snn, first_name, last_name, address, email, username, passwordl) <br />
 AdminData(username, password)
 
 # Tech Stack
