@@ -10,6 +10,7 @@ faker = Faker('en_US')
 
 pw = PasswordGenerator()
 pw.maxlen = 8
+pw.excludeschars = ",/"
 
 COUNT = 100000
 
@@ -102,7 +103,7 @@ def startpy():
 
     data.to_csv('./EmployeeData.csv')
 
-    admin = data.loc[500:510, ['username', 'password']]
+    admin = data.loc[0:10, ['username', 'password']]
     print(admin.head())
 
     admin.to_csv('./AdminData.csv')
