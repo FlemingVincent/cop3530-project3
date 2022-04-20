@@ -59,11 +59,14 @@ void Node::printInfo(){
 
 void searchFirstName(list<Node> &lst, string name){ // prints a list of Node*
     list<Node> foundResults;
+	auto start = std::chrono::system_clock::now();
     for (auto iter = lst.begin(); iter != lst.end(); iter++){
         if(iter->first.compare(name) == 0){
             foundResults.push_back(*iter);
         }
     }
+	auto end = std::chrono::system_clock::now();
+	std::chrono::duration<double> diff = end - start;
     if(foundResults.size() != 0){ //accessing the list of Node pointers using a pointer
     
         for (auto iter = foundResults.begin(); iter != foundResults.end(); iter++){
@@ -77,15 +80,19 @@ void searchFirstName(list<Node> &lst, string name){ // prints a list of Node*
     else{
         cout << "Sorry, no results found!\n\n";
     }
+	std::cout << "Time to search by first name - using list: " << diff.count() << " seconds" << endl;
 }
 
 void searchLastName(list<Node> &lst, string name){ // prints a list of Node*
     list<Node> foundResults;
-    for (auto iter = lst.begin(); iter != lst.end(); iter++){
+    auto start = std::chrono::system_clock::now();
+	for (auto iter = lst.begin(); iter != lst.end(); iter++){
         if(iter->last.compare(name) == 0){
             foundResults.push_back(*iter);
         }
     }
+	auto end = std::chrono::system_clock::now();
+	std::chrono::duration<double> diff = end - start;
     if(foundResults.size() != 0){ //accessing the list of Node pointers using a pointer
   
         for (auto iter = foundResults.begin(); iter != foundResults.end(); iter++){
@@ -99,6 +106,7 @@ void searchLastName(list<Node> &lst, string name){ // prints a list of Node*
     else{
         cout << "Sorry, no results found!\n\n";
     }
+	cout << "Time to search by first name - using list: " << diff.count() << " seconds" << endl;
 }
 
 void searchFullName(list<Node> &lst, string firstname, string lastname){ // prints a list of Node*
@@ -108,7 +116,7 @@ void searchFullName(list<Node> &lst, string firstname, string lastname){ // prin
     
     list<Node> LastNameResults;
     list<Node> foundResults;
-
+	auto start = std::chrono::system_clock::now();
     for (auto iter = lst.begin(); iter != lst.end(); iter++){
         if(iter->last.compare(lastname) == 0){
             LastNameResults.push_back(*iter);
@@ -119,6 +127,8 @@ void searchFullName(list<Node> &lst, string firstname, string lastname){ // prin
             foundResults.push_back(*it);
         }
     }
+	auto end = std::chrono::system_clock::now();
+	std::chrono::duration<double> diff = end - start;
     if(foundResults.size() != 0){ //accessing the list of Node pointers using a pointer
         cout << "We found " << foundResults.size() << " result!\n\n";   
         for (auto iter = foundResults.begin(); iter != foundResults.end(); iter++){
@@ -131,6 +141,7 @@ void searchFullName(list<Node> &lst, string firstname, string lastname){ // prin
     else{
         cout << "\nSorry, no results found!\n\n";
     }
+	cout << "Time to search by first name - using list: " << diff.count() << " seconds" << endl;
 }
 
 void createList(list<Node> &lst, string filePath){
@@ -366,22 +377,14 @@ int main() {
 				string name;
                 cout << "First Name: ";
                 cin >> name;
-                start = std::chrono::system_clock::now();
                 searchFirstName(lst, name);
-                end = std::chrono::system_clock::now();
-                diff = end - start;
-                cout << "Time to search by first name - using list: " << diff.count() << " seconds" << endl;
 			}
 
 			else if (searchOption== 2) {
 				string name;
                 cout << "Name: ";
                 cin >> name;
-                start = std::chrono::system_clock::now();
                 searchLastName(lst, name);
-                end = std::chrono::system_clock::now();
-                diff = end - start;
-                cout << "Time to search by last name - using list: " << diff.count() << " seconds" << endl;
 			}
 			else if (searchOption == 3) {
 				string firstname;
@@ -390,11 +393,7 @@ int main() {
                 cin >> firstname;
                 cout << "Last Name: ";
                 cin >> lastname;
-                start = std::chrono::system_clock::now();
                 searchFullName(lst, firstname, lastname);
-                end = std::chrono::system_clock::now();
-                diff = end - start;
-                cout << "Time to search by full name - using list: " << diff.count() << " seconds\n" << endl;
 			}
 			else {
 				cout << "Invalid input" << endl;
