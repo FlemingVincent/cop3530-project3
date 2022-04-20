@@ -19,6 +19,4 @@
   As stated earlier, our team decided to randomly generate data using a Python script which included two libraries: Faker and Pandas. In addition to Python, we also decided to use C++ to implement our data structures/algorithms. We figured this would be the safest option, considering we have been using C++ since COP3503, and if we were to run into any problems we could get help from TAs. For version control we decided that it would be best to implement Git, as this is how most projects are worked on in the software development industry.
 
 # Distribution of Roles
-Carter Johnson - data generation & data structure implementation <br />
-Mira Menon - sorting algorithms & data structure implementation <br />
-Vincent Fleming - data generation, github version control & data strucutre implementation
+  For this project, Carter Johnson was primarily in charge of data generation using Python, Pandas, and Faker. Vincent Fleming was primarily in charge of setting up, initializing, and maintaining version control using Git and GitHub. For data structure and algorithm implementation, Carter Johnson, Mira Menon, and Vincent Fleming all worked together.
